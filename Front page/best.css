@@ -1,0 +1,223 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    background-color: #000;
+    overflow-x: hidden;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url('https://source.unsplash.com/1600x900/?space,stars') no-repeat center/cover;
+    position: relative;
+}
+
+.hero h1 {
+    font-size: 5rem;
+    margin-bottom: 30px;
+    animation: fadeIn 2s ease;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.hero .cta {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3b82f6;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: 0.3s;
+}
+
+.hero .cta:hover {
+    background-color: #2563eb;
+    transform: scale(1.1);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Stars Animation */
+#stars, #stars2, #stars3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+#stars {
+    background: url('stars.jpg');
+    animation: moveStars 150s linear infinite;
+    opacity: 5;
+}
+
+#stars2 {
+    background: url('stars.jpg');
+    animation: moveStars 100s linear infinite;
+    opacity: 5;
+}
+
+#stars3 {
+    background: url('stars.jpg');
+    animation: moveStars 150s linear infinite;
+    opacity: 5;
+}
+
+@keyframes moveStars {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-1000px);
+    }
+}
+
+/* About Section */
+.about {
+    padding: 50px 20px;
+    background-color: #161b33;
+    text-align: center;
+}
+
+.about h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.about p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+.about .icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.about .icon {
+    font-size: 2rem;
+    background: #1f2a48;
+    padding: 15px;
+    border-radius: 50%;
+    color: #3b82f6;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.about .icon:hover {
+    transform: scale(1.3);
+    box-shadow: 0 0 20px #3b82f6;
+    background: #3b82f6;
+    color: #fff;
+}
+
+/* Topics Section */
+.topics {
+    padding: 50px 20px;
+    background-color: #0e1124;
+    text-align: center;
+}
+
+.topics h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.topics .cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.topics .card {
+    width: 200px;
+    height: 150px;
+    background: #1f2a48;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 1.2rem;
+    color: #fff;
+    transition: 0.3s;
+}
+
+.topics .card:hover {
+    transform: scale(1.1);
+    background: #3b82f6;
+}
+
+/* Fun Facts Section */
+.fun-facts {
+    padding: 50px 20px;
+    background-color: #161b33;
+    text-align: center;
+}
+
+.fun-facts h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.fun-facts .fact {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.fun-facts .fact span {
+    font-size: 1.5rem;
+    color: #3b82f6;
+    font-weight: bold;
+}
+
+/* Footer Section */
+footer {
+    background: linear-gradient(to right, #0b0d1e, #1f2a48);
+    padding: 20px;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+footer a {
+    color: #3b82f6;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .about .icons {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .topics .cards {
+        flex-direction: column;
+        align-items: center;
+    }
+}

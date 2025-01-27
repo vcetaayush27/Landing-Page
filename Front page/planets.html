@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planets</title>
+    <link rel="stylesheet" href="planets_styles.css">
+    <script defer src="planets_script.js"></script>
+</head>
+<body>
+    <header class="hero">
+        <h1>Planets of the Solar System</h1>
+        <p>Explore fascinating details about each planet.</p>
+        <a href="best.html" class="back-home">Back to Home</a>
+
+
+    </header>
+
+    <main class="planets">
+        <div class="planet" data-name="Mercury" data-age="4.5 billion years" data-radius="2,439.7 km" data-rotation="58.6 days" data-revolution="88 days">
+            <img src="Mercury.jpg" alt="Mercury">
+            <p>Mercury</p>
+        </div>
+        <div class="planet" data-name="Venus" data-age="4.5 billion years" data-radius="6,051.8 km" data-rotation="243 days" data-revolution="225 days">
+            <img src="venus.jpg" alt="Venus">
+            <p>Venus</p>
+        </div>
+        <div class="planet" data-name="Earth" data-age="4.5 billion years" data-radius="6,371 km" data-rotation="24 hours" data-revolution="365.25 days">
+            <img src="earth.jpg" alt="Earth">
+            <p>Earth</p>
+        </div>
+        <div class="planet" data-name="Mars" data-age="4.5 billion years" data-radius="3,389.5 km" data-rotation="24.6 hours" data-revolution="687 days">
+            <img src="mars.jpg" alt="Mars">
+            <p>Mars</p>
+        </div>
+        <div class="planet" data-name="Jupiter" data-age="4.5 billion years" data-radius="69,911 km" data-rotation="9.9 hours" data-revolution="12 years">
+            <img src="jupiter.jpg" alt="Jupiter">
+            <p>Jupiter</p>
+        </div>
+        <div class="planet" data-name="Saturn" data-age="4.5 billion years" data-radius="58,232 km" data-rotation="10.7 hours" data-revolution="29 years">
+            <img src="saturn.jpg" alt="Saturn">
+            <p>Saturn</p>
+        </div>
+        <div class="planet" data-name="Uranus" data-age="4.5 billion years" data-radius="25,362 km" data-rotation="17.2 hours" data-revolution="84 years">
+            <img src="uranus.png" alt="Uranus">
+            <p>Uranus</p>
+        </div>
+        <div class="planet" data-name="Neptune" data-age="4.5 billion years" data-radius="24,622 km" data-rotation="16 hours" data-revolution="165 years">
+            <img src="neptune.jpg" alt="Neptune">
+            <p>Neptune</p>
+        </div>
+    </main>
+
+    <div class="planet-details">
+        <h2 id="planet-name">Planet Name</h2>
+        <p id="planet-age"></p>
+        <p id="planet-radius"></p>
+        <p id="planet-rotation"></p>
+        <p id="planet-revolution"></p>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Explore Astronomy</p>
+    </footer>
+</body>
+</html>

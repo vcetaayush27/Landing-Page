@@ -1,0 +1,198 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    background-color: #000;
+    overflow-x: hidden;
+}
+
+header.hero {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url('images/space-bg.jpg') no-repeat center/cover;
+    color: #fff;
+}
+
+.back-home {
+    display: block; 
+    text-align: left; 
+    margin: 10px 0; 
+    color: #fff; 
+    text-decoration: none; 
+}
+
+.back-home:hover {
+    text-decoration: underline;
+}
+
+header.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+header.hero p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+/* Planets Grid */
+.planets {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.planet {
+    width: 150px;
+    text-align: center;
+    position: relative; /* For background popup positioning */
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.planet img {
+    width: 100%;
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+    transition: opacity 0.3s ease, box-shadow 0.3s ease;
+}
+
+.planet:hover {
+    transform: scale(1.1);
+}
+
+.planet:hover img {
+    opacity: 0; /* Hide the inner icon */
+    box-shadow: none; /* Optionally remove shadow */
+}
+
+/* Popup Background Animation */
+.planet:hover::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 300px;
+    height: 300px;
+    background: rgba(0, 0, 0, 0.7) no-repeat center/cover;
+    background-size: contain;
+    border-radius: 50%;
+    z-index: -1;
+    box-shadow: 0 0 50px rgba(255, 255, 255, 0.5);
+    animation: popup 0.5s ease forwards;
+}
+
+/* Define keyframes for popup animation */
+@keyframes popup {
+    from {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0;
+    }
+    to {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
+
+.planet[data-name="Mercury"]:hover::before {
+    background-image: url('Mercury.jpg');
+}
+
+.planet[data-name="Venus"]:hover::before {
+    background-image: url('venus.jpg');
+}
+
+.planet[data-name="Earth"]:hover::before {
+    background-image: url('earth.jpg');
+}
+
+.planet[data-name="Mars"]:hover::before {
+    background-image: url('mars.jpg');
+}
+
+.planet[data-name="Jupiter"]:hover::before {
+    background-image: url('jupiter.jpg');
+}
+
+.planet[data-name="Saturn"]:hover::before {
+    background-image: url('saturn.jpg');
+}
+
+.planet[data-name="Uranus"]:hover::before {
+    background-image: url('uranus.png');
+}
+
+.planet[data-name="Neptune"]:hover::before {
+    background-image: url('neptune.jpg');
+}
+
+/* Planet Details Popup */
+.planet-details {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(220, 206, 11, 0.9);
+    border-radius: 10px;
+    padding: 20px;
+    display: none;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    width: 300px;
+    height: 200px;
+    opacity: 0;
+}
+
+/* Display the details when planet is hovered */
+.planet:hover + .planet-details {
+    display: block;
+    transform: translateX(-50%) scale(1.2);
+    opacity: 1;
+    animation: slideUp 0.5s ease forwards, glow 1s infinite alternate;
+}
+
+/* Sliding Up and Glowing Animation */
+@keyframes slideUp {
+    from {
+        transform: translateX(-50%) translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(-50%) translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+    }
+    100% {
+        box-shadow: 0 0 30px rgba(255, 255, 255, 0.9);
+    }
+}
+
+.planet-details h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.planet-details p {
+    margin: 5px 0;
+    font-size: 1.2rem;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #111;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
